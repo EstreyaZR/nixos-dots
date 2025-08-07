@@ -2,8 +2,7 @@
 {
    home.packages = with pkgs; [btop waybar];
    home.stateVersion = "25.05";
-   home.packages = [
-   ];
+   home.".config/nvim/init.lua".file = ./nvim-config.lua
 
    programs = {
      direnv = {
@@ -34,6 +33,7 @@
 	};
       };
       obsidian.enable = true;
+      emacs.enable = true;
    };
 
    stylix.targets.librewolf.profileNames = [ "main" ];

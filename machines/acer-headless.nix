@@ -23,18 +23,15 @@
   };
   console.keyMap = "de-latin1-nodeadkeys";
 
-  environment.systemPackages = with pkgs; [
-   kitty rofi-wayland-unwrapped
+  environment.systemPackages = [
+    pkgs.kitty
+    kdePackages.k3b
+    kdePackages.ark
   ];
 
   programs = { 
     fish.enable = true;
     starship.enable = true;
-
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-    };
   };
 
   hardware.nvidia = {
