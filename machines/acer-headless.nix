@@ -23,8 +23,8 @@
   };
   console.keyMap = "de-latin1-nodeadkeys";
 
-  environment.systemPackages = [
-    pkgs.kitty
+  environment.systemPackages = with pkgs; [
+    kitty
     kdePackages.k3b
     kdePackages.ark
   ];

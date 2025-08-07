@@ -2,12 +2,10 @@
 {
    home.packages = with pkgs; [btop waybar];
    home.stateVersion = "25.05";
-   home.".config/nvim/init.lua".file = ./nvim-config.lua
 
    programs = {
      direnv = {
        enable = true;
-       enableFishIntegration = true;
        nix-direnv.enable = true;
      };
 
