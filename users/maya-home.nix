@@ -18,6 +18,16 @@
 	viAlias = true;
 	vimAlias = true;
 	defaultEditor = true;
+
+	plugins = with pkgs.vimPlugins; [
+	  nvim-treesitter
+	  nvim-treesitter.withAllGrammars
+	  vim-lsp-snippets
+	  vim-lsp
+	  nvim-lsp-notify
+
+	  obsidian-nvim
+	];
       };
       git = {
 	enable = true;
