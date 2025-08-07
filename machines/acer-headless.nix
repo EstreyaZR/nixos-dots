@@ -13,6 +13,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "Nixos-Acer"; # Define your hostname.
 
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland = true;
+
   services.xserver.xkb = {
     layout = "de";
     variant = "nodeadkeys";
