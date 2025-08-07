@@ -2,9 +2,18 @@
 {
    home.packages = with pkgs; [btop waybar];
    home.stateVersion = "25.05";
+   home.packages = [
+   ];
 
    programs = {
-      anki.enable = true;
+     direnv = {
+       enable = true;
+       enableFishIntegration = true;
+       nix-direnv.enable = true;
+     };
+
+     fish.enable = true;
+     anki.enable = true;
       neovim = {
 	enable = true;
 	viAlias = true;
@@ -26,8 +35,6 @@
       };
       obsidian.enable = true;
    };
-
-   wayland.windowManager.hyprland.systemd.enable = true;
 
    stylix.targets.librewolf.profileNames = [ "main" ];
    stylix.targets.librewolf.colorTheme.enable = true;
