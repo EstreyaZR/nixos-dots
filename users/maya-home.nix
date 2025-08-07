@@ -10,7 +10,6 @@
      };
 
      fish.enable = true;
-     anki.enable = true;
       neovim = {
 	enable = true;
 	viAlias = true;
@@ -25,6 +24,7 @@
 	  nvim-lsp-notify
 
 	  obsidian-nvim
+	  LazyVim
 	];
       };
       git = {
@@ -40,9 +40,12 @@
 	  };
 	};
       };
-      obsidian.enable = true;
       emacs.enable = true;
    };
+
+   home.packages = with pkgs; [
+obsidian anki
+   ];
 
    stylix.targets.librewolf.profileNames = [ "main" ];
    stylix.targets.librewolf.colorTheme.enable = true;
