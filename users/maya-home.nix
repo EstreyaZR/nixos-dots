@@ -16,5 +16,9 @@
 	userName = "Maya Ella Mampf";
 	userEmail = "zrezlon@gmail.com";
       };
+      librewolf.enable = true;
+      obsidian.enable = true;
    };
+
+   wayland.windowManager.hyprland.systemd.enable = true;
 }
