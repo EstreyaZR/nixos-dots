@@ -32,6 +32,9 @@
       # Stylix 
 
       ./modules/stylix.nix
+
+      # MANDATORY BASE
+      ./modules/base-desktop.nix
       ];
     };
   };
