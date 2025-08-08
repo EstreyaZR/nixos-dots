@@ -6,5 +6,5 @@
     jamesdsp
   ];
 
-  services.pipewire.pulse = true;
+  services.pipewire.pulse.enable = true;
 }
