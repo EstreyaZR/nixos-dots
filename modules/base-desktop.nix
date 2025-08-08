@@ -24,6 +24,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  programs.nh.enable = true;
 
   services.flatpak.enable = true;
   hardware.bluetooth.enable = true;

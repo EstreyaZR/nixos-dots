@@ -1,6 +1,5 @@
 { lib, config, pkgs, ...}:
 {
-   home.packages = with pkgs; [btop waybar];
    home.stateVersion = "25.05";
 
    programs = {
