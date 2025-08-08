@@ -1,7 +1,19 @@
 {pkgs, ...}: {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
+
+    # other cool themes:
+    # DARK:
+    # rose-pine / rose-pine-moon
+    # tokyo-night-storm / tokyo-night-moon
+    # valua
+    # porple / phd
+    #
+    # LIGHT:
+    # rose-pine-dawn
+    # catppuccin-latte
+
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/moonlight.yaml"; #
     polarity = "light";
   };
 }
