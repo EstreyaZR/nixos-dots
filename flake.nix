@@ -36,6 +36,7 @@
 
       # MANDATORY BASE
       ./modules/base-desktop.nix
+      ./modules/programming.nix
       ];
     };
   };
