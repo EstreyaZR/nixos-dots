@@ -12,6 +12,7 @@
     options = "--delete-older-than 30d";
     };
     settings.auto-optimise-store = true;
+    settings.experimental-features = ["nix-command" "flakes"];
     optimise = {
       automatic = true;
       dates = ["weekly"];

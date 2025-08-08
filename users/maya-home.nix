@@ -28,14 +28,18 @@
 	profiles = {
 	  main = {
 	    extensions.force = true;
+	    extraConfig = ''
+              "widget.use-xdg-desktop-portal.file-picker": 1,\n
+	      "webgl.disabled": false
+	    '';
 	  };
 	};
 	policies = {
 	  Preferences = {
-            "widget.use-xdg-desktop-portal.file-picker" = 1;
-	    "webgl.disabled" = false;
+              "widget.use-xdg-desktop-portal.file-picker" = "1";
+	      "webgl.disabled" = "false";
 	  };
-	  ExtensionSettings = {}
+	  ExtensionSettings = {};
         };
       };
       emacs.enable = true;
