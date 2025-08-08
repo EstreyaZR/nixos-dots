@@ -2,27 +2,33 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix";
-    stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+    nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = {self, nixpkgs, home-manager, stylix, ...}: 
+  outputs = {self, nixpkgs, home-manager, stylix, nvf, ...}: 
     let 
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      nixosConfigurations.Nixos-Acer = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-      home-manager.nixosModules.home-manager
-      stylix.nixosModules.stylix
-      
-      # Main Config File
-      ./machines/acer-headless.nix
+      packages.${system}.my_neovim = (nvf.lib.neovimConfiguration{
+	pkgs = nixpkgs.legacyPackages.${system};
+	modules = [./modules/neovim-per-nvf.nix];
+      }).neovim;
 
-      # Home Manager
+      nixosConfigurations.Nixos-Acer = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+        home-manager.nixosModules.home-manager
+        stylix.nixosModules.stylix
+      
+        # Main Config File
+        ./machines/acer-headless.nix
+        ./modules/programming.nix
+        
+	# Home Manager
           {
 	    home-manager.backupFileExtension = "bk";
             home-manager.useGlobalPkgs = true;
@@ -30,13 +36,12 @@
             home-manager.users.maya = ./users/maya-home.nix;
 	  }
 
-      # Stylix 
+        # Stylix 
 
-      ./modules/stylix.nix
+        ./modules/stylix.nix
 
-      # MANDATORY BASE
-      ./modules/base-desktop.nix
-      ./modules/programming.nix
+        # MANDATORY BASE
+        ./modules/base-desktop.nix
       ];
     };
   };
