@@ -33,6 +33,10 @@
     kitty
     kdePackages.k3b
     kdePackages.ark
+    alpaca.override
+    {
+      ollama = pkgs.ollama-cuda;
+    }
   ];
 
   programs = {

@@ -5,6 +5,7 @@
     stylix.url = "github:nix-community/stylix";
 
     nvf.url = "github:notashelf/nvf";
+    musnix.url = "github:musnix/musnix";
   };
 
   outputs = {
@@ -13,6 +14,7 @@
     home-manager,
     stylix,
     nvf,
+    musnix,
     ...
   }: let
     system = "x86_64-linux";
@@ -25,6 +27,7 @@
         home-manager.nixosModules.home-manager
         nvf.nixosModules.default
         stylix.nixosModules.stylix
+        musnix.nixosModules.musnix
 
         # Main Config File
         ./machines/acer-headless.nix
@@ -43,8 +46,12 @@
 
         ./modules/stylix.nix
 
+        # Musnix
+        #./modules/musnix.nix
+
         # MANDATORY BASE
         ./modules/base-desktop.nix
+        ./modules/desktop.nix
       ];
     };
   };

@@ -41,9 +41,6 @@
   };
 
   home.packages = with pkgs; [
-    obsidian
-    anki
-    jamesdsp
     blanket
   ];
 
