@@ -13,20 +13,17 @@
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      packages.${system}.my_neovim = (nvf.lib.neovimConfiguration{
-	pkgs = nixpkgs.legacyPackages.${system};
-	modules = [./modules/neovim-per-nvf.nix];
-      }).neovim;
-
       nixosConfigurations.Nixos-Acer = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
         home-manager.nixosModules.home-manager
+	nvf.nixosModules.default
         stylix.nixosModules.stylix
       
         # Main Config File
         ./machines/acer-headless.nix
         ./modules/programming.nix
+	./modules/neovim-per-nvf.nix
         
 	# Home Manager
           {
