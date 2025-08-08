@@ -15,16 +15,8 @@
 	vimAlias = true;
 	defaultEditor = true;
 
-	plugins = with pkgs.vimPlugins; [
-	  nvim-treesitter
-	  nvim-treesitter.withAllGrammars
-	  vim-lsp-snippets
-	  vim-lsp
-	  nvim-lsp-notify
-
-	  obsidian-nvim
-	  LazyVim
-	];
+	#plugins = with pkgs.vimPlugins; [
+	#];
       };
       git = {
 	enable = true;
@@ -38,12 +30,19 @@
 	    extensions.force = true;
 	  };
 	};
+	policies = {
+	  Preferences = {
+            "widget.use-xdg-desktop-portal.file-picker" = 1;
+	    "webgl.disabled" = false;
+	  };
+	  ExtensionSettings = {}
+        };
       };
       emacs.enable = true;
    };
 
    home.packages = with pkgs; [
-obsidian anki
+obsidian anki jamesdsp blanket
    ];
 
    stylix.targets.librewolf.profileNames = [ "main" ];

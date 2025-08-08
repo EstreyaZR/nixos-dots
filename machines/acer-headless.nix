@@ -10,8 +10,11 @@
     ../users/maya.nix
   ];
 
-  boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "Nixos-Acer"; # Define your hostname.
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.plymouth = {
+    enable = true;
+  };
 
   services.desktopManager.plasma6.enable = true;
   services.displayManager.gdm.enable = true;
