@@ -3,6 +3,7 @@
     enable = true;
 
     settings.vim = {
+      formatter.conform-nvim.enable = true;
       dashboard.dashboard-nvim.enable = true;
       filetree.neo-tree.enable = true;
       git.enable = true;
@@ -39,28 +40,68 @@
       projects.project-nvim.enable = true;
 
       navigation.harpoon.enable = true;
-      notes.obsidian.enable = true;
-
       syntaxHighlighting = true;
-      #tabline.nvimBufferline.enable = true;
+
+      tabline.nvimBufferline.enable = true;
 
       languages = {
         enableFormat = true;
         enableTreesitter = true;
 
-        bash.enable = true;
-        nix.enable = true;
-        rust.enable = true;
-        python.enable = true;
-        go.enable = true;
-        gleam.enable = true;
-        css.enable = true;
-        html.enable = true;
-        java.enable = true;
-        yaml.enable = true;
-        clang.enable = true;
-        lua.enable = true;
-        sql.enable = true;
+        bash = {
+          enable = true;
+          lsp.enable = true;
+        };
+        nix = {
+          enable = true;
+          lsp.enable = true;
+        };
+        rust = {
+          enable = true;
+          lsp.enable = true;
+        };
+
+        java = {
+          enable = true;
+          lsp.enable = true;
+        };
+        css = {
+          enable = true;
+          lsp.enable = true;
+        };
+
+        go = {
+          enable = true;
+          lsp.enable = true;
+        };
+
+        python = {
+          enable = true;
+          lsp.enable = true;
+        };
+        lua = {
+          enable = true;
+          lsp.enable = true;
+        };
+        gleam = {
+          enable = true;
+          lsp.enable = true;
+        };
+        yaml = {
+          enable = true;
+          lsp.enable = true;
+        };
+        clang = {
+          enable = true;
+          lsp.enable = true;
+        };
+        html = {
+          enable = true;
+        };
+        sql = {
+          enable = true;
+          lsp.enable = true;
+        };
       };
     };
   };

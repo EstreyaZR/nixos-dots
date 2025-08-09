@@ -7,6 +7,7 @@
   home.stateVersion = "25.05";
 
   programs = {
+    anki.enable = true;
     direnv = {
       enable = true;
       nix-direnv.enable = true;
