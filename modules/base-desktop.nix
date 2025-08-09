@@ -9,13 +9,21 @@
   };
 
   nix = {
+    settings = {
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+      substituters = [
+        "https://nix-community.cachix.org"
+      ];
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+    };
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 30d";
     };
-    settings.auto-optimise-store = true;
-    settings.experimental-features = ["nix-command" "flakes"];
     optimise = {
       automatic = true;
       dates = ["weekly"];
@@ -30,17 +38,23 @@
     fastfetch
   ];
 
-  nixpkgs.config.allowUnfree = true;
-  programs.nh.enable = true;
-  programs.fish.enable = true;
+  nixpkgs.config.allowUnfree = lib.mkDefault true;
+  programs.nh.enable = lib.mkDefault true;
+  programs.fish.enable = lib.mkForce true;
 
-  services.flatpak.enable = true;
-  hardware.bluetooth.enable = true;
+  services = {
+    flatpak.enable = lib.mkDefault true;
+    tuned.enable = lib.mkDefault true;
+    tuned.ppdSupport = lib.mkDefault true;
+    tuned.settings.dynamic_tuning = lib.mkDefault true;
+  };
 
-  networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = lib.mkDefault true;
+
+  networking.networkmanager.enable = lib.mkDefault true;
 
   xdg.portal = {
-    enable = true;
+    enable = lib.mkForce true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
@@ -68,11 +82,11 @@
     inputMethod.ibus.engines = with pkgs.ibus-engines; [hangul anthy libpinyin];
   };
 
-  users.defaultUserShell = pkgs.fish;
-  time.timeZone = "Europe/Berlin";
+  users.defaultUserShell = lib.mkDefault pkgs.fish;
+  time.timeZone = lib.mkDefault "Europe/Berlin";
 
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.operation = "boot";
+  system.autoUpgrade.enable = lib.mkDefault true;
+  system.autoUpgrade.operation = lib.mkDefault "boot";
   system.autoUpgrade.flake = "github:EstreyaZR:nixos-dots";
-  system.autoUpgrade.dates = "weekly";
+  system.autoUpgrade.dates = lib.mkDefault "weekly";
 }
