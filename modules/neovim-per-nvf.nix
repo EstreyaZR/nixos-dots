@@ -14,9 +14,13 @@
 
       viAlias = true;
       vimAlias = true;
-      lsp.enable = true;
-      lsp.formatOnSave = true;
-      lsp.inlayHints.enable = true;
+      lsp = {
+        enable = true;
+        formatOnSave = true;
+        inlayHints.enable = true;
+        lightbulb.enable = true;
+        lspconfig.enable = true;
+      };
 
       lineNumberMode = "relNumber";
 
@@ -38,7 +42,7 @@
       notes.obsidian.enable = true;
 
       syntaxHighlighting = true;
-      tabline.nvimBufferline.enable = true;
+      #tabline.nvimBufferline.enable = true;
 
       languages = {
         enableFormat = true;

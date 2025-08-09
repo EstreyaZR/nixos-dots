@@ -42,6 +42,7 @@
 
   home.packages = with pkgs; [
     blanket
+    eza
   ];
 
   stylix.targets.librewolf.profileNames = ["main"];
