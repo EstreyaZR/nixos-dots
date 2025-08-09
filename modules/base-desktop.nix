@@ -82,7 +82,7 @@
     inputMethod.ibus.engines = with pkgs.ibus-engines; [hangul anthy libpinyin];
   };
 
-  users.defaultUserShell = lib.mkDefault pkgs.fish;
+  users.defaultUserShell = pkgs.fish;
   time.timeZone = lib.mkDefault "Europe/Berlin";
 
   system.autoUpgrade.enable = lib.mkDefault true;
