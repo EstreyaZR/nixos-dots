@@ -1,5 +1,5 @@
 {
-  import = [
+  imports = [
     ./base-desktop.nix
     ./desktop.nix
     ./gaming.nix
