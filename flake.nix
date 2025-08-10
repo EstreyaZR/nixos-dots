@@ -1,6 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     stylix.url = "github:nix-community/stylix";
 
@@ -10,7 +11,8 @@
 
   outputs = {
     self,
-    nixpkgs,
+    nixpkgs-unstable,
+    nixpkgs-stable,
     home-manager,
     stylix,
     nvf,
@@ -18,11 +20,15 @@
     ...
   }: let
     system = "x86_64-linux";
-    lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${system};
+    lib = nixpkgs-unstable.lib;
+    pkgs = nixpkgs-unstable.legacyPackages.${system};
+    pkgs-stable = nixpkgs-stable.legacyPackages.${system};
   in {
-    nixosConfigurations.Nixos-Acer = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.Nixos-Acer = nixpkgs-unstable.lib.nixosSystem {
       inherit system;
+      specialArgs = {
+        inherit pkgs-stable;
+      };
       modules = [
         home-manager.nixosModules.home-manager
         nvf.nixosModules.default
