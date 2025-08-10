@@ -30,6 +30,7 @@
         inherit pkgs-stable;
       };
       modules = [
+        # Flake-Modules Import
         home-manager.nixosModules.home-manager
         nvf.nixosModules.default
         stylix.nixosModules.stylix
@@ -46,8 +47,6 @@
           home-manager.useUserPackages = true;
           home-manager.users.maya = ./users/maya-home.nix;
         }
-
-        # Stylix
       ];
     };
   };

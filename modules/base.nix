@@ -60,9 +60,13 @@
     };
   };
 
-  hardware.bluetooth.enable = lib.mkDefault true;
+  hardware = {
+    bluetooth.enable = lib.mkDefault true;
+  };
 
-  networking.networkmanager.enable = lib.mkDefault true;
+  networking = {
+    networkmanager.enable = lib.mkDefault true;
+  };
 
   xdg.portal = {
     enable = lib.mkForce true;
