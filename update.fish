@@ -1,11 +1,11 @@
 #! /etc/profiles/per-user/maya/bin/fish
 #
 #
+export confdir="$HOME/Projects/nixos-dots"
 
-export $SYSTEM_CONFIG="$HOME/Projects/nixos-dots/"
-
-echo $HOME
 cd $HOME
-rm .gtkrc-2.0
-cd $SYSTEM_CONFIG
+if ls -la | grep -i '.gtkrc'
+  rm ./.gtkrc-2.0
+end
+cd $confdir
 sudo nixos-rebuild switch --flake .
