@@ -46,8 +46,6 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.maya = ./users/maya-home.nix;
-
-          estreya.desktop.enable = true;
         }
       ];
     };
