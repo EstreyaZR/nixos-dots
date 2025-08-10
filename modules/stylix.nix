@@ -17,10 +17,14 @@
     polarity = "light";
 
     fonts = {
-      monospace = pkgs.nerd-fonts._0xproto;
-      sansSerif = pkgs.inter;
-      serif = pkgs.inter;
-      emoji = pkgs.noto-fonts-color-emoji;
+      monospace.package = pkgs.nerd-fonts._0xproto;
+      monospace.name = "0xproto";
+      sansSerif.package = pkgs.inter;
+      sansSerif.name = "Inter";
+      serif.package = pkgs.inter;
+      serif.name = "Inter";
+      emoji.package = pkgs.noto-fonts-color-emoji;
+      emoji.name = "Noto Fonts Emoji";
     };
   };
 }
