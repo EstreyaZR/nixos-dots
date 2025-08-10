@@ -1,6 +1,10 @@
 {
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
-    ./base-desktop.nix
+    ./base.nix
     ./desktop.nix
     ./gaming.nix
     ./musnix.nix
