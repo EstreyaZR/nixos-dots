@@ -37,8 +37,7 @@
 
         # Main Config File
         ./machines/acer-headless.nix
-        ./modules/programming.nix
-        ./modules/neovim-per-nvf.nix
+        ./modules/default.nix
 
         # Home Manager
         {
@@ -49,15 +48,6 @@
         }
 
         # Stylix
-
-        ./modules/stylix.nix
-
-        # Musnix
-        #./modules/musnix.nix
-
-        # MANDATORY BASE
-        ./modules/base-desktop.nix
-        ./modules/desktop.nix
       ];
     };
   };

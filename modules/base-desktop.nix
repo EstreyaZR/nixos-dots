@@ -3,11 +3,12 @@
   lib,
   ...
 }: {
+  # Best Bootloader
   boot.loader.limine = {
     enable = true;
     maxGenerations = 10;
   };
-
+  ## Common NIX options
   nix = {
     settings = {
       trusted-public-keys = [
@@ -29,7 +30,10 @@
       dates = ["weekly"];
     };
   };
-
+  nixpkgs = {
+    config.allowUnfree = lib.mkDefault true;
+  };
+  # Never forget NVIM and GIT
   environment.systemPackages = with pkgs; [
     neovim
     wget
@@ -38,15 +42,22 @@
     fastfetch
   ];
 
-  nixpkgs.config.allowUnfree = lib.mkDefault true;
   programs.nh.enable = lib.mkDefault true;
   programs.fish.enable = lib.mkForce true;
 
   services = {
     flatpak.enable = lib.mkDefault true;
-    tuned.enable = lib.mkDefault true;
-    tuned.ppdSupport = lib.mkDefault true;
-    tuned.settings.dynamic_tuning = lib.mkDefault true;
+    tuned = {
+      enable = lib.mkDefault true;
+      ppdSupport = lib.mkDefault true;
+      ppdSettings.profiles = lib.mkDefault {
+        balanced = "desktop";
+        performance = "accelerator-performance";
+        power-saver = "desktop-powersave";
+      };
+      ppdSettings.main.default = "performace";
+      settings.dynamic_tuning = lib.mkDefault true;
+    };
   };
 
   hardware.bluetooth.enable = lib.mkDefault true;
