@@ -59,6 +59,15 @@
         rust = {
           enable = true;
           lsp.enable = true;
+          lsp.opts = ''
+            ['rust-analyzer'] = {
+              cargo = {allFeature = true},
+              checkOnSave = true,
+              procMacro = {
+                enable = true,
+              },
+            },
+          '';
         };
 
         java = {
