@@ -6,7 +6,7 @@
   imports = [
     ./base.nix
     ./desktop.nix
-    ./gaming.nix
+    ## ./gaming.nix
     ./musnix.nix
     ./neovim-per-nvf.nix
     ./programming.nix

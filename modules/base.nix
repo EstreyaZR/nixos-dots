@@ -5,8 +5,8 @@
 }: {
   # Best Bootloader
   boot.loader.limine = {
-    enable = true;
-    maxGenerations = 10;
+    enable = lib.mkForce true;
+    maxGenerations = lib.mkDefault 10;
   };
   ## Common NIX options
   nix = {
@@ -66,7 +66,7 @@
 
   xdg.portal = {
     enable = lib.mkForce true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = lib.mkDefault [pkgs.xdg-desktop-portal-gtk];
   };
 
   i18n = {

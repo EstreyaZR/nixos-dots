@@ -14,9 +14,10 @@ in {
     environment.systemPackages = with pkgs; [
       libreoffice-qt6
       obsidian
-      anki
+      anki-bin
       kdePackages.okular
       jamesdsp
+      tauon
     ];
 
     services.pipewire.pulse.enable = true;
