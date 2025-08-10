@@ -60,7 +60,7 @@
           enable = true;
           lsp.enable = true;
           lsp.opts = ''
-            ['rust-analyzer'] = {
+            [rust-analyzer] = {
               cargo = {allFeature = true},
               checkOnSave = true,
               procMacro = {
