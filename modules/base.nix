@@ -102,9 +102,9 @@
       LC_TELEPHONE = "de_DE.UTF-8";
       LC_TIME = "de_DE.UTF-8";
     };
-    inputMethod.type = "ibus";
-    inputMethod.enable = true;
-    inputMethod.ibus.engines = with pkgs.ibus-engines; [hangul anthy libpinyin];
+    #inputMethod.type = "ibus";
+    #inputMethod.enable = true;
+    #inputMethod.ibus.engines = with pkgs.ibus-engines; [hangul anthy libpinyin];
   };
 
   users.defaultUserShell = pkgs.fish;
