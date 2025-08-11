@@ -39,8 +39,6 @@
     neovim
     wget
     fastfetch
-    coreutils
-    fd
     clang
     ripgrep
     git
@@ -76,20 +74,12 @@
       };
       settings.dynamic_tuning = lib.mkDefault true;
     };
-
-    # Emacs Support: https://nixos.wiki/wiki/Emacs#Installing_packages
-
-    emacs = {
-      enable = true;
-      package = pkgs.emacs-nox;
-    };
   };
 
   hardware = {
     bluetooth.enable = lib.mkDefault true;
     bumblebee.enable = lib.mkDefault true;
     graphics.enable = lib.mkDefault true;
-    graphics.enable32Bit = lib.mkDefault true;
   };
 
   networking = {
