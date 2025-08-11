@@ -41,6 +41,7 @@
     })
     kdePackages.kdenlive
     krita
+    calibre
   ];
 
   programs = {
