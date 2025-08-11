@@ -47,6 +47,8 @@
       languages = {
         enableFormat = true;
         enableTreesitter = true;
+        enableDAP = true;
+        enableExtraDiagnostics = true;
 
         bash = {
           enable = true;
@@ -55,9 +57,13 @@
         nix = {
           enable = true;
           lsp.enable = true;
+          treesitter.enable = true;
         };
         rust = {
           enable = true;
+          lsp.enable = false;
+          dap.enable = true;
+          treesitter.enable = true;
         };
 
         java = {
@@ -72,19 +78,24 @@
         go = {
           enable = true;
           lsp.enable = true;
+          treesitter.enable = true;
         };
 
         python = {
           enable = true;
           lsp.enable = true;
+          dap.enable = true;
+          treesitter.enable = true;
         };
         lua = {
           enable = true;
           lsp.enable = true;
+          treesitter.enable = true;
         };
         gleam = {
           enable = true;
           lsp.enable = true;
+          treesitter.enable = true;
         };
         yaml = {
           enable = true;
@@ -93,6 +104,7 @@
         clang = {
           enable = true;
           lsp.enable = true;
+          treesitter.enable = true;
         };
         html = {
           enable = true;

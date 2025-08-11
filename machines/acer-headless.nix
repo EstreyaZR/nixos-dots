@@ -39,6 +39,8 @@
     (pkgs.alpaca.override {
       ollama = pkgs.ollama-cuda;
     })
+    kdePackages.kdenlive
+    krita
   ];
 
   programs = {
