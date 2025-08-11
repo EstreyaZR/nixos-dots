@@ -7,6 +7,8 @@
   environment.systemPackages =
     (with pkgs; [
       llvmPackages.bintools
+      cargo
+      rustc
       clang
       go
 
