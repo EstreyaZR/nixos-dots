@@ -32,7 +32,7 @@
   };
   nixpkgs = {
     config.allowUnfree = lib.mkDefault true;
-    config.nvidia.acceptLicense = lib.mkDefault true;
+    config.nvidia.acceptLicense = true;
   };
   # Never forget NVIM and GIT
   environment.systemPackages = with pkgs; [
