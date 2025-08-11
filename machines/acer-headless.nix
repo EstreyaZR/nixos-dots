@@ -5,6 +5,7 @@
   config,
   pkgs,
   home-manager,
+  lib,
   ...
 }: {
   imports = [
@@ -22,7 +23,7 @@
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
     displayManager.sddm.wayland.enable = true;
-    displayManager.sddm.package = pkgs.kdePackages.sddm;
+    displayManager.sddm.package = lib.mkDefault pkgs.kdePackages.sddm;
     displayManager.sddm.wayland.compositor = "kwin";
     xserver.xkb = {
       layout = "de";

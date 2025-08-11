@@ -65,7 +65,6 @@
         performance = "accelerator-performance";
         power-saver = "desktop-powersave";
       };
-      ppdSettings.main.default = "performace";
       settings.dynamic_tuning = lib.mkDefault true;
     };
   };
