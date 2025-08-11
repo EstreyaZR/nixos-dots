@@ -20,8 +20,10 @@
 
   services = {
     desktopManager.plasma6.enable = true;
-    displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = true;
+    displayManager.sddm.enable = true;
+    displayManager.sddm.wayland.enable = true;
+    displayManager.sddm.package = pkgs.kdePackages.sddm;
+    displayManager.sddm.wayland.compositor = "kwin";
     xserver.xkb = {
       layout = "de";
       variant = "nodeadkeys";

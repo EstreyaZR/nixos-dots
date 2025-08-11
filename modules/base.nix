@@ -42,8 +42,18 @@
     fastfetch
   ];
 
-  programs.nh.enable = lib.mkDefault true;
-  programs.fish.enable = lib.mkForce true;
+  programs = {
+    nh.enable = lib.mkDefault true;
+    fish = {
+      enable = lib.mkForce true;
+      shellAliases = {
+        ls = "eza";
+        ll = "eza -loa";
+
+        ff = "fastfetch";
+      };
+    };
+  };
 
   services = {
     flatpak.enable = lib.mkDefault true;
