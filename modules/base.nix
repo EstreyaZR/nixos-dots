@@ -37,13 +37,21 @@
   environment.systemPackages = with pkgs; [
     neovim
     wget
+    fastfetch
+    coreutils
+    fd
+    clang
+    ripgrep
     git
     gh
-    fastfetch
   ];
 
   programs = {
     nh.enable = lib.mkDefault true;
+
+    tmux.enable = lib.mkDefault true;
+    tmux.terminal = "screen-256color";
+
     fish = {
       enable = lib.mkForce true;
       shellAliases = {
@@ -67,10 +75,20 @@
       };
       settings.dynamic_tuning = lib.mkDefault true;
     };
+
+    # Emacs Support: https://nixos.wiki/wiki/Emacs#Installing_packages
+
+    emacs = {
+      enable = true;
+      package = pkgs.emacs;
+    };
   };
 
   hardware = {
     bluetooth.enable = lib.mkDefault true;
+    bumblebee.enable = lib.mkDefault true;
+    graphics.enable = lib.mkDefault true;
+    graphics.enable32Bit = lib.mkDefault true;
   };
 
   networking = {
