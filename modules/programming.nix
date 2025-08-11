@@ -6,7 +6,6 @@
 }: {
   environment.systemPackages =
     (with pkgs; [
-      rustup
       llvmPackages.bintools
       clang
       go

@@ -61,8 +61,7 @@
         };
         rust = {
           enable = true;
-          lsp.enable = false;
-          dap.enable = true;
+          lsp.enable = true;
           treesitter.enable = true;
         };
 
