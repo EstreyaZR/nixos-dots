@@ -4,10 +4,10 @@
   config,
   ...
 }: let
-  cfg = config.estreya.desktop;
+  cfg = config.estreya.desktop.apps;
 in {
-  options.estreya.desktop = {
-    enable = lib.mkEnableOption "enable common desktop utilites and kde6";
+  options.estreya.desktop.apps = {
+    enable = lib.mkEnableOption "enable common desktop utilites";
     default = true;
   };
   config = lib.mkIf cfg.enable {
@@ -17,10 +17,8 @@ in {
       hunspellDicts.de_DE
       hunspellDicts.en_GB
       obsidian
-      anki-bin
-      kdePackages.okular
       jamesdsp
-      tauon
+      papers
     ];
 
     services.pipewire.pulse.enable = true;

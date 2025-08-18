@@ -1,5 +1,11 @@
-{pkgs, lib, ...}:
-{
+{pkgs, lib, config, ...}:
+let cfg = config.estreya.desktop.librewolf;
+in:
+  options.estreya.desktop.apps = {
+    enable = lib.mkEnableOption "enable librewolf browser";
+    default = true;
+  };
+  config = lib.mkIf cfg.enable {
   programs.firefox = {
   enable = true;
   package = pkgs.librewolf;

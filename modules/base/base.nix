@@ -8,6 +8,9 @@
     enable = lib.mkForce true;
     maxGenerations = lib.mkDefault 10;
   };
+  boot.plymouth = {
+    enable = true;
+  };
   ## Common NIX options
   nix = {
     settings = {
@@ -36,14 +39,12 @@
   };
   # Never forget NVIM and GIT
   environment.systemPackages = with pkgs; [
-    neovim
-    nano
+    neovim nano
     wget
-    fastfetch
-    clang
-    ripgrep
-    git
-    gh
+    fastfetch clang ripgrep git gh fzf
+    bluetui
+
+    refind
 
     steam-run
   ];
@@ -60,6 +61,7 @@
         ff = "fastfetch";
       };
     };
+    starship.enable = true;
   };
 
   services = {

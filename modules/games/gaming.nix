@@ -4,9 +4,9 @@
   config,
   ...
 }: let
-  cfg = config.estreya.desktop.gaming;
+  cfg = config.estreya.gaming;
 in {
-  options.estreya.desktop.gaming = {
+  options.estreya.gaming = {
     enable = lib.mkEnableOption "Enables native Steam and Lutris";
     default = false;
   };

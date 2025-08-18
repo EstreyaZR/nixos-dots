@@ -4,9 +4,9 @@
   config,
   ...
 }: let
-  cfg = config.estreya.desktop.socialMedia;
+  cfg = config.estreya.desktop.social;
 in {
-  options.estreya.desktop.socialMedia = {
+  options.estreya.desktop.social = {
     enable = lib.mkEnableOption "enables native social media apps";
     default = lib.mkDefault false;
   };

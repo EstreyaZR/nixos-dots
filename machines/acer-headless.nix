@@ -15,21 +15,11 @@
 
   networking.hostName = "Nixos-Acer"; # Define your hostname.
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.plymouth = {
-    enable = true;
-  };
-
   services = {
-    desktopManager.plasma6.enable = true;
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
-    displayManager.sddm.package = lib.mkDefault pkgs.kdePackages.sddm;
-    displayManager.sddm.wayland.compositor = "kwin";
     xserver.xkb = {
       layout = "de";
       variant = "nodeadkeys";
     };
-    freshrss.enable = true;
   };
   console.keyMap = "de-latin1-nodeadkeys";
 
@@ -45,9 +35,6 @@
     calibre
   ];
 
-  programs = {
-    starship.enable = true;
-  };
 
   hardware.nvidia = {
     prime = {

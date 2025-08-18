@@ -4,13 +4,12 @@
   ...
 }: {
   imports = [
-    ./base.nix
-    ./desktop.nix
-    ./gaming.nix
-    ./musnix.nix
-    ./neovim-per-nvf.nix
+    ./base/default.nix
+    ./desktop/default.nix
+    ./games/default.nix
+    ./server/default.nix
+
     ./programming.nix
-    ./stylix.nix
-    ./librewolf.nix
+    ./neovim-per-nvf.nix
   ];
 }

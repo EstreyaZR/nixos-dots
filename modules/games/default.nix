@@ -4,9 +4,8 @@
   pkgs,
   ...
 }: {
+
 import = [
-  ./base.nix
-  ./stylix.nix
-  ./musnix.nix
+  ./gaming.nix
 ];
 }

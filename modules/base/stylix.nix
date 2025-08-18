@@ -13,7 +13,7 @@
     # rose-pine-dawn
     # catppuccin-latte
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/moonlight.yaml"; #
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml"; #
     polarity = "light";
 
     fonts = {
