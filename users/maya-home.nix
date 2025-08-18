@@ -27,28 +27,23 @@
       profiles = {
         main = {
           extensions.force = true;
-          extraConfig = ''
-                   "widget.use-xdg-desktop-portal.file-picker": 1,\n
-            "webgl.disabled": false
-          '';
         };
       };
-      policies = {
-        Preferences = {
-          "widget.use-xdg-desktop-portal.file-picker" = "1";
-          "webgl.disabled" = "false";
-        };
-        ExtensionSettings = {};
+      settings = {
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
+        "webgl.disabled" = false;
       };
     };
-    emacs.enable = true;
   };
 
   home.packages = with pkgs; [
-    blanket
     eza
   ];
 
-  stylix.targets.librewolf.profileNames = ["main"];
-  stylix.targets.librewolf.colorTheme.enable = true;
+  stylix.targets = { 
+    librewolf = {
+      profileNames = ["main"];
+      colorTheme.enable = true;
+    };
+  };
 }
