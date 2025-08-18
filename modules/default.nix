@@ -11,5 +11,6 @@
     ./neovim-per-nvf.nix
     ./programming.nix
     ./stylix.nix
+    ./librewolf.nix
   ];
 }

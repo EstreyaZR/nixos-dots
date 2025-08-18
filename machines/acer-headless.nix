@@ -29,6 +29,7 @@
       layout = "de";
       variant = "nodeadkeys";
     };
+    freshrss.enable = true;
   };
   console.keyMap = "de-latin1-nodeadkeys";
 

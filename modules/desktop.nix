@@ -12,7 +12,10 @@ in {
   };
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      libreoffice-qt6
+      libreoffice-qt6-fresh
+      hunspell
+      hunspellDicts.de_DE
+      hunspellDicts.en_GB
       obsidian
       anki-bin
       kdePackages.okular

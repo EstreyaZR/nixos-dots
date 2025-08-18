@@ -32,24 +32,24 @@
   };
   nixpkgs = {
     config.allowUnfree = lib.mkDefault true;
-    config.nvidia.acceptLicense = true;
+    #config.nvidia.acceptLicense = true;
   };
   # Never forget NVIM and GIT
   environment.systemPackages = with pkgs; [
     neovim
+    nano
     wget
     fastfetch
     clang
     ripgrep
     git
     gh
+
+    steam-run
   ];
 
   programs = {
     nh.enable = lib.mkDefault true;
-
-    tmux.enable = lib.mkDefault true;
-    tmux.terminal = "screen-256color";
 
     fish = {
       enable = lib.mkForce true;
@@ -74,6 +74,7 @@
       };
       settings.dynamic_tuning = lib.mkDefault true;
     };
+    emacs.enable = true;
   };
 
   hardware = {
@@ -92,8 +93,8 @@
   };
 
   i18n = {
-    defaultLocale = "de_DE.UTF-8";
-    extraLocales = [
+    defaultLocale = lib.mkDefault "de_DE.UTF-8";
+    extraLocales = lib.mkDefault [
       "tr_TR.UTF-8/UTF-8"
       "ru_RU.UTF-8/UTF-8"
       "ja_JP.UTF-8/UTF-8"
@@ -111,9 +112,18 @@
       LC_TELEPHONE = "de_DE.UTF-8";
       LC_TIME = "de_DE.UTF-8";
     };
-    #inputMethod.type = "ibus";
-    #inputMethod.enable = true;
-    #inputMethod.ibus.engines = with pkgs.ibus-engines; [hangul anthy libpinyin];
+    #
+    inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      #type = "ibus";
+      #ibus.engines = with pkgs.ibus-engines; [hangul anthy libpinyin];
+      fcitx5.addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-hangul
+        fcitx5-m17n
+      ];
+    };
   };
 
   users.defaultUserShell = pkgs.fish;
