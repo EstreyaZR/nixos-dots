@@ -68,7 +68,6 @@
       };
     };
     starship.enable = true;
-    bash.enable = true;
   };
 
   services = {
@@ -87,13 +86,12 @@
   };
 
   hardware = {
-    bluetooth.enable = lib.mkDefault true;
-    bumblebee.enable = lib.mkDefault true;
-    graphics.enable = lib.mkDefault true;
+    bluetooth.enable = true;
+    graphics.enable = true;
   };
 
   networking = {
-    networkmanager.enable = lib.mkDefault true;
+    networkmanager.enable = true;
   };
 
   xdg.portal = {
@@ -135,7 +133,7 @@
     };
   };
 
-  users.defaultUserShell = pkgs.fish;
+  ##users.defaultUserShell = pkgs.fish;
   time.timeZone = lib.mkDefault "Europe/Berlin";
 
   system.autoUpgrade.enable = lib.mkDefault true;
