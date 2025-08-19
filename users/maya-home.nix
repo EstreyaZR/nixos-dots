@@ -34,13 +34,14 @@
         "webgl.disabled" = false;
       };
     };
+    obsidian.enable = true;
   };
 
   home.packages = with pkgs; [
     eza
   ];
 
-  stylix.targets = { 
+  stylix.targets = {
     librewolf = {
       profileNames = ["main"];
       colorTheme.enable = true;

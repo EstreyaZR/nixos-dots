@@ -13,5 +13,6 @@ in {
   config = lib.mkIf cfg.enable {
     programs.steam.enable = true;
     environment.systemPackages = with pkgs; [lutris];
+    programs.java.enable = true;
   };
 }
