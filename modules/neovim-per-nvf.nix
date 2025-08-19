@@ -75,9 +75,9 @@
         };
 
         go = {
-          enable = true;
-          lsp.enable = true;
-          treesitter.enable = true;
+          enable = false;
+          lsp.enable = false;
+          treesitter.enable = false;
         };
 
         python = {

@@ -5,7 +5,7 @@
   ...
 }: {
 
-import = [
+imports = [
   ./gaming.nix
 ];
 }

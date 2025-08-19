@@ -35,13 +35,19 @@
   };
   nixpkgs = {
     config.allowUnfree = lib.mkDefault true;
-    #config.nvidia.acceptLicense = true;
+    config.nvidia.acceptLicense = true;
   };
   # Never forget NVIM and GIT
   environment.systemPackages = with pkgs; [
-    neovim nano
+    neovim
+    nano
     wget
-    fastfetch clang ripgrep git gh fzf
+    fastfetch
+    clang
+    ripgrep
+    git
+    gh
+    fzf
     bluetui
 
     refind
@@ -62,6 +68,7 @@
       };
     };
     starship.enable = true;
+    bash.enable = true;
   };
 
   services = {

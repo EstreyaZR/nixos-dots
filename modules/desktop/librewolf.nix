@@ -1,20 +1,20 @@
 {pkgs, lib, config, ...}:
 let cfg = config.estreya.desktop.librewolf;
-in:
-  options.estreya.desktop.apps = {
+in { 
+  options.estreya.desktop.librewolf = {
     enable = lib.mkEnableOption "enable librewolf browser";
     default = true;
   };
   config = lib.mkIf cfg.enable {
-  programs.firefox = {
-  enable = true;
-  package = pkgs.librewolf;
-  policies = {
-    DisableTelemetry = true;
-    DisableFirefoxStudies = true;
-    DisableThirdPartyModuleBlocking = true;
-    DisplayBookmarksToolbar = true;
-    Preferences = {
+    programs.firefox = {
+    enable = true;
+    package = pkgs.librewolf;
+    policies = {
+      DisableTelemetry = true;
+      DisableFirefoxStudies = true;
+      DisableThirdPartyModuleBlocking = true;
+      DisplayBookmarksToolbar = true;
+      Preferences = {
       "cookiebanners.service.mode.privateBrowsing" = 2; # Block cookie banners in private browsing
       "cookiebanners.service.mode" = 2; # Block cookie banners
       "privacy.donottrackheader.enabled" = true;
@@ -24,8 +24,8 @@ in:
       "privacy.trackingprotection.enabled" = true;
       "privacy.trackingprotection.fingerprinting.enabled" = true;
       "privacy.trackingprotection.socialtracking.enabled" = true;
-    };
-    ExtensionSettings = {
+      };
+      ExtensionSettings = {
       "jid1-ZAdIEUB7XOzOJw@jetpack" = {
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/duckduckgo-for-firefox/latest.xpi";
         installation_mode = "force_installed";
@@ -40,9 +40,10 @@ in:
       };
     };
   };
-  preferences = {
-    "widget.use-xdg-desktop-portal.file-picker" = 1;
-  };
+  #preferences = {
+  #  "widget.use-xdg-desktop-portal.file-picker" = 1;
+  #};
 };
 
+};
 }

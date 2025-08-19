@@ -1,14 +1,15 @@
-{pkgs, cfg, lib, ...}: 
+{pkgs, config, lib, ...}: 
 let 
   cfg = config.estreya.desktop.plasma;
-in: {
+in { 
   options.estreya.desktop.plasma = {
-    enable = lib.mkEnableOption "enables native social media apps";
-    default = lib.mkDefault true;
+    enable = lib.mkEnableOption "enables plasma6";
+    default = true;
   };
   config = lib.mkIf cfg.enable {
-    desktopManager.plasma6.enable = true;
-    displayManager.sddm = { 
+    services = {
+      desktopManager.plasma6.enable = true;
+      displayManager.sddm = { 
       enable = true;
       package = lib.mkDefault pkgs.kdePackages.sddm;
       wayland = {
@@ -16,8 +17,10 @@ in: {
         compositor = "kwin";
       };
     };
+    };
     environment.systemPackages = with pkgs; [
       kdePackages.okular
       kdePackages.k3b
     ];
+};
 }

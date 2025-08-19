@@ -13,7 +13,7 @@
     ../users/maya.nix
   ];
 
-  networking.hostName = "Nixos-Acer"; # Define your hostname.
+  networking.hostName = "AcerHeadless"; # Define your hostname.
   boot.loader.efi.canTouchEfiVariables = true;
   services = {
     xserver.xkb = {
@@ -27,9 +27,9 @@
     kitty
     kdePackages.k3b
     kdePackages.ark
-    (pkgs.alpaca.override {
-      ollama = pkgs.ollama-cuda;
-    })
+    #(pkgs.alpaca.override {
+    #  ollama = pkgs.ollama-cuda;
+    #})
     kdePackages.kdenlive
     krita
     calibre

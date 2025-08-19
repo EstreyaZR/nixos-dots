@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-import = [
+imports = [
   ./base.nix
   ./stylix.nix
   ./musnix.nix

@@ -24,13 +24,12 @@
     pkgs = nixpkgs-unstable.legacyPackages.${system};
     pkgs-stable = nixpkgs-stable.legacyPackages.${system};
   in {
-    nixosConfigurations.Nixos-Acer = nixpkgs-unstable.lib.nixosSystem {
+    nixosConfigurations.AcerHeadless = nixpkgs-unstable.lib.nixosSystem {
       inherit system;
       specialArgs = {
         inherit pkgs-stable;
       };
       modules = [
-        # Flake-Modules Import
         home-manager.nixosModules.home-manager
         nvf.nixosModules.default
         stylix.nixosModules.stylix
@@ -47,7 +46,8 @@
           home-manager.useUserPackages = true;
           home-manager.users.maya = ./users/maya-home.nix;
 
-          estreya.desktop.enable = true;
+          estreya.desktop.plasma.enable = true;
+	  estreya.desktop.librewolf.enable = true;
         }
       ];
     };
