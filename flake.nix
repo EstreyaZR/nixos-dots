@@ -47,7 +47,8 @@
           home-manager.users.maya = ./users/maya-home.nix;
 
           estreya.desktop.plasma.enable = true;
-	  estreya.desktop.librewolf.enable = true;
+          estreya.desktop.librewolf.enable = true;
+          estreya.gaming.enable = true;
         }
       ];
     };
