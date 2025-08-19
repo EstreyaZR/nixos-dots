@@ -13,12 +13,12 @@
     # rose-pine-dawn
     # catppuccin-latte
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml"; #
-    polarity = "light";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml"; #
+    polarity = "dark";
 
     fonts = {
       monospace.package = pkgs.nerd-fonts._0xproto;
-      monospace.name = "0xproto";
+      monospace.name = "0xProto";
       sansSerif.package = pkgs.inter;
       sansSerif.name = "Inter";
       serif.package = pkgs.inter;

@@ -1,12 +1,11 @@
-
 {
   lib,
   pkgs,
   ...
 }: {
-imports = [
-  ./base.nix
-  ./stylix.nix
-  ./musnix.nix
-];
+  imports = [
+    ./base.nix
+    ./stylix.nix
+    ./musnix.nix
+  ];
 }

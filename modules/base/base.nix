@@ -122,22 +122,22 @@
     #
     inputMethod = {
       enable = true;
-      type = "fcitx5";
-      #type = "ibus";
-      #ibus.engines = with pkgs.ibus-engines; [hangul anthy libpinyin];
-      fcitx5.addons = with pkgs; [
-        fcitx5-anthy
-        fcitx5-pinyin-moegirl
-        kdePackages.fcitx5-chinese-addons
-        kdePackages.fcitx5-qt
-        kdePackages.fcitx5-with-addons
-        fcitx5-hangul
-        fcitx5-m17n
-      ];
+      #type = "fcitx5";
+      type = "ibus";
+      ibus.engines = with pkgs.ibus-engines; [hangul anthy libpinyin];
+      #fcitx5.addons = with pkgs; [
+      #  fcitx5-anthy
+      #  fcitx5-pinyin-moegirl
+      #  kdePackages.fcitx5-chinese-addons
+      #  kdePackages.fcitx5-qt
+      #  kdePackages.fcitx5-with-addons
+      #  fcitx5-hangul
+      #  fcitx5-m17n
+      #];
     };
   };
 
-  ##users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.fish;
   time.timeZone = lib.mkDefault "Europe/Berlin";
 
   system.autoUpgrade.enable = lib.mkDefault true;
