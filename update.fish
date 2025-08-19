@@ -1,7 +1,7 @@
 #! /etc/profiles/per-user/maya/bin/fish
 #
 #
-export confdir="$HOME/Projekte/nixos-dots"
+export confdir="$HOME/Projekte/nixos-dots/"
 
 cd $HOME
 if ls -la | grep -i '.gtkrc-2.0'

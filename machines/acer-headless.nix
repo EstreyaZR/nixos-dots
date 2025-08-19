@@ -20,6 +20,9 @@
       layout = "de";
       variant = "nodeadkeys";
     };
+    udev.extraRules = ''
+      SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="0cf3", ENV{ID_MODEL_ID}=="e300", ATTR{authorized}="0"\n
+    ''; ## Bus 001 Device 003: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
   };
   console.keyMap = "de-latin1-nodeadkeys";
 
