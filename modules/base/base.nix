@@ -126,7 +126,11 @@
       #type = "ibus";
       #ibus.engines = with pkgs.ibus-engines; [hangul anthy libpinyin];
       fcitx5.addons = with pkgs; [
-        fcitx5-mozc
+        fcitx5-anthy
+        fcitx5-pinyin-moegirl
+        kdePackages.fcitx5-chinese-addons
+        kdePackages.fcitx5-qt
+        kdePackages.fcitx5-with-addons
         fcitx5-hangul
         fcitx5-m17n
       ];
