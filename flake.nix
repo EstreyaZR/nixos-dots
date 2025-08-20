@@ -7,6 +7,7 @@
 
     nvf.url = "github:notashelf/nvf";
     musnix.url = "github:musnix/musnix";
+    #fenix.url = "github:nix-community/fenix";
   };
 
   outputs = {
@@ -17,6 +18,7 @@
     stylix,
     nvf,
     musnix,
+    #fenix,
     ...
   }: let
     system = "x86_64-linux";

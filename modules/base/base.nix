@@ -55,6 +55,7 @@
     refind
 
     steam-run
+    cachix
   ];
 
   programs = {
