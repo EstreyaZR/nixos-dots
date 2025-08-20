@@ -28,6 +28,8 @@
       inherit system;
       specialArgs = {
         inherit pkgs-stable;
+        inherit pkgs;
+        inherit lib;
       };
       modules = [
         home-manager.nixosModules.home-manager
