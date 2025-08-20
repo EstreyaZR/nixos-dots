@@ -10,6 +10,7 @@ in {
     enable = lib.mkEnableOption "small gnome env";
     default = false;
   };
+
   config = lib.mkIf cfg.enable {
     services = {
       desktopManager.gnome.enable = true;

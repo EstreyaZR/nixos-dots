@@ -8,7 +8,7 @@
 in {
   options.estreya.desktop.librewolf = {
     enable = lib.mkEnableOption "enable librewolf browser";
-    defaul = true;
+    default = true;
   };
   config = lib.mkIf cfg.enable {
     programs.firefox = {
