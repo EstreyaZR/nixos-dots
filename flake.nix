@@ -49,8 +49,8 @@
 
           #estreya.desktop.plasma.enable = false;
           #estreya.desktop.gnome.enable = true;
-          #estreya.desktop.librewolf.enable = true;
-          #estreya.gaming.enable = true;
+          estreya.desktop.librewolf.enable = true;
+          estreya.gaming.enable = true;
         }
       ];
     };
