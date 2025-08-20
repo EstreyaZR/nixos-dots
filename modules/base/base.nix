@@ -105,9 +105,7 @@
     };
   };
 
-  networking = {
-    networkmanager.enable = true;
-  };
+  networking.networkmanager.enable = true;
 
   xdg.portal = {
     enable = lib.mkForce true;
