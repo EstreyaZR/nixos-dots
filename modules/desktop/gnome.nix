@@ -15,11 +15,11 @@ in {
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
       gnome = {
-        core-apps.enable = lib.mkDefault false;
-        core-developer-tools.enable = lib.mkDefault true;
-        gnome-keyring.enable = lib.mkDefault true;
-        gnome-online-accounts.enable = lib.mkDefault true;
-        sushi = lib.mkDefault true;
+        core-apps.enable = false;
+        core-developer-tools.enable = true;
+        gnome-keyring.enable = true;
+        gnome-online-accounts.enable = true;
+        sushi = true;
       };
     };
     environment.systemPackages = with pkgs; [
