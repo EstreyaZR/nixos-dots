@@ -28,7 +28,6 @@
       inherit system;
       specialArgs = {
         inherit pkgs-stable;
-        inherit pkgs;
         inherit lib;
       };
       modules = [
