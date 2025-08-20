@@ -1,4 +1,10 @@
-{pkgs, lib,config}: let cfg = config.estreya.desktop.cosmic in {
+{
+  pkgs,
+  lib,
+  config,
+}: let
+  cfg = config.estreya.desktop.cosmic;
+in {
   options.estreya.desktop.cosmic = {
     enable = lib.mkEnableOption "enable cosmic";
     default = false;
@@ -32,7 +38,7 @@
     ];
     xdg.portal = {
       enable = true;
-      extraPortals = with pkgs; [ xdg-desktop-portal-cosmic ];
+      extraPortals = with pkgs; [xdg-desktop-portal-cosmic];
     };
   };
 }
