@@ -1,8 +1,8 @@
 {
   lib,
   pkgs,
-  pkgs-stable,
   config,
+  ...
 }: let
   cfg = config.estreya.desktop.cosmic;
 in {
