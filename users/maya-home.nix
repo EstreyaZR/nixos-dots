@@ -44,7 +44,6 @@
       profileNames = ["main"];
       colorTheme.enable = true;
     };
-    obsidian.enable = true;
   };
 
   wayland.windowManager.hyprland = {
