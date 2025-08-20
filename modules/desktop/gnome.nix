@@ -25,8 +25,8 @@ in {
         sushi = true;
       };
     };
-    environment.systemPackages = with pkgs; [
-      nautilus
-    ];
+    #environment.systemPackages = with pkgs; [
+    #  nautilus
+    #];
   };
 }
