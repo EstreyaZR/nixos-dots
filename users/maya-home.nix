@@ -50,8 +50,4 @@
       colorTheme.enable = true;
     };
   };
-
-  wayland.windowManager.hyprland = {
-    enable = false;
-  };
 }
