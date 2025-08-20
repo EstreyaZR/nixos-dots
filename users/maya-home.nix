@@ -34,11 +34,24 @@
         "webgl.disabled" = false;
       };
     };
-    obsidian.enable = true;
+
+    obsidian = {
+      enable = true;
+      vaults."main" = {
+        target = "./Obsidian";
+      };
+    };
+
+    gh.enable = true;
+    fzf.enable = true;
+    ripgrep-all.enable = true;
+    eza = {
+      enable = true;
+      enableFishIntegration = true;
+    };
   };
 
   home.packages = with pkgs; [
-    eza
   ];
 
   stylix.targets = {
@@ -46,5 +59,9 @@
       profileNames = ["main"];
       colorTheme.enable = true;
     };
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = false;
   };
 }

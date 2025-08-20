@@ -45,10 +45,6 @@
     wget
     fastfetch
     clang
-    ripgrep
-    git
-    gh
-    fzf
     bluetui
 
     refind
@@ -69,6 +65,12 @@
       };
     };
     starship.enable = true;
+    git = { 
+      enable = true;
+      config = { init = {
+        defaultBranch = "main";
+      };
+    };
   };
 
   services = {
