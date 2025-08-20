@@ -14,7 +14,7 @@ in {
   config = lib.mkIf cfg.enable {
     services = {
       desktopManager.gnome.enable = true;
-      #displayManager.gdm.enable = true;
+      displayManager.gdm.enable = true;
       gnome = {
         core-apps.enable = false;
         core-developer-tools.enable = true;

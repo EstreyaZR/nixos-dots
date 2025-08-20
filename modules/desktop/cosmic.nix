@@ -14,7 +14,8 @@ in {
   config = lib.mkIf cfg.enable {
     services = {
       desktopManager.cosmic.enable = true;
-      displayManager.cosmic-greeter.enable = true;
+      # Bugged for now..
+      # displayManager.cosmic-greeter.enable = true;
     };
     environment.systemPackages = with pkgs; [
       cosmic-term
