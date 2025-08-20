@@ -41,6 +41,7 @@
         # Main Config File
         ./machines/acer-headless.nix
         ./modules/default.nix
+        /etc/nixos/cachix.nix
 
         # Home Manager
         {
