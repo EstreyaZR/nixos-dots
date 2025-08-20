@@ -1,20 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs,
-  home-manager,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hw-acer-headless.nix
     ../users/maya.nix
   ];
 
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.enable = true;
   networking.hostName = "AcerHeadless"; # Define your hostname.
   boot.loader.efi.canTouchEfiVariables = true;
   services = {
