@@ -38,6 +38,7 @@
       enableFishIntegration = true;
     };
   };
+  qt.platformTheme.name = "adwaita";
 
   stylix.targets = {
     librewolf = {

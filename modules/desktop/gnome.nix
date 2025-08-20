@@ -20,6 +20,9 @@ in {
       (with pkgs; [
         nautilus
         gnome-tweaks
+        gnome-backgrounds
+        adwaita-qt6
+        adwaita-fonts
       ])
       ++ (with pkgs.gnomeExtensions; [
         accent-directories
