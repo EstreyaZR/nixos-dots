@@ -6,10 +6,7 @@
 }: let
   cfg = config.estreya.desktop.librewolf;
 in {
-  options.estreya.desktop.librewolf = {
-    enable = lib.mkEnableOption "enable librewolf browser";
-    default = true;
-  };
+  options.estreya.desktop.librewolf.enable = lib.mkEnableOption "enable librewolf browser";
   config = lib.mkIf cfg.enable {
     programs.firefox = {
       enable = true;

@@ -6,10 +6,7 @@
 }: let
   cfg = config.estreya.desktop.apps;
 in {
-  options.estreya.desktop.apps = {
-    enable = lib.mkEnableOption "enable common desktop utilites";
-    default = true;
-  };
+  options.estreya.desktop.apps.enable = lib.mkEnableOption "enable common desktop utilites";
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       libreoffice-qt6-fresh

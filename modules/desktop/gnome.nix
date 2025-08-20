@@ -6,10 +6,7 @@
 }: let
   cfg = config.estreya.desktop.gnome;
 in {
-  options.estreya.desktop.gnome = {
-    enable = lib.mkEnableOption "enable gnome";
-    default = false;
-  };
+  options.estreya.desktop.gnome.enable = lib.mkEnableOption "enable gnome";
 
   config = lib.mkIf cfg.enable {
     services = {
