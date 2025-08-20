@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./plasma.nix
-    #./gnome.nix
+    ./gnome.nix
     ./cosmic.nix
 
     ./socialMedia.nix
