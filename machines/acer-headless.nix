@@ -13,8 +13,8 @@
     ../users/maya.nix
   ];
 
-  service.desktopManager.gnome.enable = true;
-  service.displayManager.gdm.enable = true;
+  #service.desktopManager.gnome.enable = true;
+  #service.displayManager.gdm.enable = true;
   networking.hostName = "AcerHeadless"; # Define your hostname.
   boot.loader.efi.canTouchEfiVariables = true;
   services = {
@@ -22,7 +22,7 @@
       layout = "de";
       variant = "nodeadkeys";
     };
-    udev.extraRules = ''SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="0cf3", ENV{ID_MODEL_ID}=="e300", ATTR{authorized}="0"'';
+    #    udev.extraRules = ''SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="0cf3", ENV{ID_MODEL_ID}=="e300", ATTR{authorized}="0"'';
   };
   console.keyMap = "de-latin1-nodeadkeys";
 
@@ -30,9 +30,6 @@
     kitty
     kdePackages.k3b
     kdePackages.ark
-    #(pkgs.alpaca.override {
-    #  ollama = pkgs.ollama-cuda;
-    #})
     kdePackages.kdenlive
     krita
     calibre
