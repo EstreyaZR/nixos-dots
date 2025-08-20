@@ -1,10 +1,6 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{...}: {
   imports = [
-    ./plasma.nix
+    #./plasma.nix
     ./gnome.nix
     ./cosmic.nix
 

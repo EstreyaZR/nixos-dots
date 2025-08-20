@@ -15,4 +15,4 @@ end
 cd $confdir
 git add .
 git commit -m "automated commit for update"
-sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild boot --flake .
