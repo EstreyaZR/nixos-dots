@@ -17,12 +17,12 @@ in {
       gnome = {
         core-apps.enable = false;
         core-developer-tools.enable = true;
-
+        core-shell.enable = true;
         gnome-keyring.enable = true;
       };
     };
-    #environment.systemPackages = with pkgs; [
-    #  nautilus
-    #];
+    environment.systemPackages = with pkgs; [
+      nautilus
+    ];
   };
 }
