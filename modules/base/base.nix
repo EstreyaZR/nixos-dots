@@ -65,10 +65,12 @@
       };
     };
     starship.enable = true;
-    git = { 
+    git = {
       enable = true;
-      config = { init = {
-        defaultBranch = "main";
+      config = {
+        init = {
+          defaultBranch = "main";
+        };
       };
     };
   };
