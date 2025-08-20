@@ -22,8 +22,16 @@ in {
         gnome-keyring.enable = true;
       };
     };
-    environment.systemPackages = with pkgs; [
-      nautilus
-    ];
+    environment.systemPackages =
+      (with pkgs; [
+        nautilus
+      ])
+      ++ (with pkgs.gnomeExtensions; [
+        accent-directories
+        advanced-weather-companion
+        blur-my-shell
+        brightness-control-using-ddcutil
+        light-style
+      ]);
   };
 }
