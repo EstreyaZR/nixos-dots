@@ -42,12 +42,12 @@
       enableFishIntegration = true;
     };
   };
-  qt.platformTheme.name = lib.mkForce "adwaita";
 
   stylix.targets = {
     librewolf = {
       profileNames = ["main"];
       colorTheme.enable = true;
     };
+    qt.platform = "qtct";
   };
 }
