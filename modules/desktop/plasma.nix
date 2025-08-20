@@ -22,14 +22,9 @@ in {
         };
       };
     };
-    environment.systemPackages =
-      (with pkgs; [
-        krita
-        kdenlive
-      ])
-      ++ (with pkgs.kdePackages; [
-        k3b
-        okular
-      ]);
+    environment.systemPackages = with pkgs.kdePackages; [
+      k3b
+      okular
+    ];
   };
 }
