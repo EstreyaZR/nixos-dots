@@ -13,7 +13,7 @@
     # rose-pine-dawn
     # catppuccin-latte
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml"; #
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml"; #
     polarity = "dark";
 
     fonts = {
