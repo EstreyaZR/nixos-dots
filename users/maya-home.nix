@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home.stateVersion = "25.05";
 
   programs = {
@@ -38,7 +42,7 @@
       enableFishIntegration = true;
     };
   };
-  qt.platformTheme.name = "adwaita";
+  qt.platformTheme.name = lib.mkForce "adwaita";
 
   stylix.targets = {
     librewolf = {
