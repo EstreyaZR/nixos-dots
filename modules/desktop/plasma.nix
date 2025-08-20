@@ -8,7 +8,7 @@
 in {
   options.estreya.desktop.plasma = {
     enable = lib.mkEnableOption "enables plasma6";
-    default = lib.mkDefault true;
+    default = true;
   };
   config = lib.mkIf cfg.enable {
     services = {
