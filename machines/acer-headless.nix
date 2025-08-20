@@ -13,6 +13,8 @@
     ../users/maya.nix
   ];
 
+  service.desktopManager.gnome.enable = true;
+  service.displayManager.gdm.enable = true;
   networking.hostName = "AcerHeadless"; # Define your hostname.
   boot.loader.efi.canTouchEfiVariables = true;
   services = {
