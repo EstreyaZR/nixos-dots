@@ -12,7 +12,7 @@ in {
       libreoffice-qt6-fresh
       hunspell
       hunspellDicts.de_DE
-      hunspellDicts.en_UK
+      hunspellDicts.en_US
       obsidian
       jamesdsp
       papers
