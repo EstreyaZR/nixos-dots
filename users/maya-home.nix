@@ -51,9 +51,6 @@
     };
   };
 
-  home.packages = with pkgs; [
-  ];
-
   stylix.targets = {
     librewolf = {
       profileNames = ["main"];
