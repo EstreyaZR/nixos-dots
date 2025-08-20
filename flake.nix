@@ -55,6 +55,7 @@
           estreya.desktop.cosmic.enable = false;
           estreya.desktop.librewolf.enable = true;
           estreya.gaming.enable = true;
+          estreya.desktop.apps.enable = true;
         }
       ];
     };
