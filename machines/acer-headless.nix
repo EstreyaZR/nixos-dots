@@ -14,7 +14,6 @@
       layout = "de";
       variant = "nodeadkeys";
     };
-    udev.extraRules = ''SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="0cf3", ENV{ID_MODEL_ID}=="e300", ATTR{authorized}="0"'';
   };
   console.keyMap = "de-latin1-nodeadkeys";
 
