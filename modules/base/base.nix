@@ -13,6 +13,7 @@
       enable = true;
     };
   }; ## Common NIX options
+
   nix = {
     settings = {
       trusted-public-keys = [
@@ -24,20 +25,24 @@
       auto-optimise-store = true;
       experimental-features = ["nix-command" "flakes"];
     };
+
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 30d";
     };
+
     optimise = {
       automatic = true;
       dates = ["weekly"];
     };
   };
+
   nixpkgs = {
     config.allowUnfree = lib.mkDefault true;
     config.nvidia.acceptLicense = true;
   };
+
   # Never forget NVIM and GIT
   environment.systemPackages = with pkgs; [
     neovim
@@ -67,11 +72,6 @@
     starship.enable = true;
     git = {
       enable = true;
-      config = {
-        init = {
-          defaultBranch = "main";
-        };
-      };
     };
   };
 
