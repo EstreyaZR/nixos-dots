@@ -30,13 +30,6 @@
       };
     };
 
-    obsidian = {
-      enable = true;
-      vaults."main" = {
-        target = "./Obsidian";
-      };
-    };
-
     gh.enable = true;
     fzf.enable = true;
     ripgrep-all.enable = true;
@@ -51,6 +44,7 @@
       profileNames = ["main"];
       colorTheme.enable = true;
     };
+    obsidian.enable = true;
   };
 
   wayland.windowManager.hyprland = {
