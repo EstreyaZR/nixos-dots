@@ -4,14 +4,15 @@
   ...
 }: {
   # Best Bootloader
-  boot.loader.limine = {
-    enable = lib.mkForce true;
-    maxGenerations = lib.mkDefault 10;
-  };
-  boot.plymouth = {
-    enable = true;
-  };
-  ## Common NIX options
+  boot = {
+    loader.limine = {
+      enable = lib.mkForce true;
+      maxGenerations = lib.mkDefault 10;
+    };
+    plymouth = {
+      enable = true;
+    };
+  }; ## Common NIX options
   nix = {
     settings = {
       trusted-public-keys = [
@@ -87,7 +88,21 @@
 
   hardware = {
     bluetooth.enable = true;
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        libvdpau-va-gl
+        intel-media-driver
+        intel-vaapi-driver
+        mesa
+        nvidia-vaapi-driver
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        intel-vaapi-driver
+        mesa
+        intel-media-driver
+      ];
+    };
   };
 
   networking = {
