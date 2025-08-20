@@ -19,6 +19,7 @@ in {
     environment.systemPackages =
       (with pkgs; [
         nautilus
+        gnome-tweaks
       ])
       ++ (with pkgs.gnomeExtensions; [
         accent-directories
