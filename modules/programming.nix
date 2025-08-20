@@ -24,4 +24,6 @@
     ]);
 
   users.users.maya.extraGroups = ["kvm"];
+  programs.java.enable = true;
+  programs.java.package = pkgs-stable.jdk24;
 }
