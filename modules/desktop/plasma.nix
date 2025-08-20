@@ -16,10 +16,10 @@ in {
       displayManager.sddm = {
         enable = true;
         package = lib.mkDefault pkgs.kdePackages.sddm;
-        wayland = {
-          enable = true;
-          compositor = "kwin";
-        };
+        #wayland = {
+        #  enable = true;
+        #  compositor = "kwin";
+        #};
       };
     };
     environment.systemPackages = with pkgs.kdePackages; [
