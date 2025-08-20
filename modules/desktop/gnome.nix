@@ -16,12 +16,10 @@ in {
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
       gnome = {
-        core-shell.enable = true;
         core-apps.enable = false;
         core-developer-tools.enable = true;
 
         gnome-keyring.enable = true;
-        gnome-online-accounts.enable = true;
         sushi = true;
       };
     };
