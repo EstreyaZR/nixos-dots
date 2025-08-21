@@ -26,7 +26,7 @@
     krita
     calibre
     alpaca.override
-    {ollama = ollama-cuda;}
+    {ollama = pkgs.ollama-cuda;}
   ];
 
   hardware.nvidia = {
