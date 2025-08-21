@@ -18,7 +18,6 @@
   };
   console.keyMap = "de-latin1-nodeadkeys";
 
-
   environment.systemPackages = with pkgs; [
     kitty
     kdePackages.k3b
@@ -26,7 +25,8 @@
     kdePackages.kdenlive
     krita
     calibre
-  alpaca.override {ollama = ollama-cuda;};
+    alpaca.override
+    {ollama = ollama-cuda;}
   ];
 
   hardware.nvidia = {
