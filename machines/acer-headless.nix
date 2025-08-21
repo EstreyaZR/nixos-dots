@@ -9,6 +9,8 @@
 
   networking.hostName = "AcerHeadless"; # Define your hostname.
   boot.loader.efi.canTouchEfiVariables = true;
+
+  nixpkgs.config.cudaSupport = true;
   services = {
     xserver.xkb = {
       layout = "de";
@@ -25,8 +27,6 @@
     kdePackages.kdenlive
     krita
     calibre
-    alpaca.override
-    {ollama = pkgs.ollama-cuda;}
   ];
 
   hardware.nvidia = {
@@ -37,5 +37,10 @@
     };
   };
 
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-cuda;
+    acceleration = "cuda";
+  };
   system.stateVersion = "25.05"; # Did you read the comment?
 }
