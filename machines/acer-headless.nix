@@ -25,6 +25,10 @@
     kdePackages.kdenlive
     krita
     calibre
+    (alpaca.override
+      {
+        ollama = pkgs.ollama-cuda;
+      })
   ];
 
   hardware.nvidia = {
