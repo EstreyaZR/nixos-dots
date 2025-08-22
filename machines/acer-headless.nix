@@ -35,7 +35,6 @@
 
   services.ollama = {
     enable = true;
-    package = pkgs.ollama-cuda;
     acceleration = "cuda";
   };
   system.stateVersion = "25.05"; # Did you read the comment?
