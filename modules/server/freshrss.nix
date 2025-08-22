@@ -11,7 +11,7 @@ in {
     services.freshrss = {
       enable = true;
       language = "de";
-      passwordFile = "freshrssPW";
+      passwordFile = "/run/secrets/freshrssPW";
     };
   };
 }
