@@ -10,6 +10,8 @@
   networking.hostName = "AcerHeadless"; # Define your hostname.
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.xserver.videoDrivers = ["nvidia"];
+
   nixpkgs.config.cudaSupport = true;
   services = {
     xserver.xkb = {
