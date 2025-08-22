@@ -16,7 +16,8 @@ in {
         webserver = "nginx";
         virtualHost = address;
         baseUrl = "https://${address}";
-        authType = "none";
+        authType = "http_form";
+        passwordFile = "/var/lib/freshrss/passwd";
       };
       nginx = {
         enable = true;
