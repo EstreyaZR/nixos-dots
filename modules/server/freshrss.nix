@@ -11,6 +11,7 @@ in {
   config = lib.mkIf cfg.enable {
     services = {
       freshrss = {
+        defaultUser = "freshrss";
         enable = true;
         language = "de";
         webserver = "nginx";
@@ -20,8 +21,9 @@ in {
       };
       nginx = {
         enable = true;
-        #virtualHosts."${address}" = {
-        #};
+        virtualHosts."${address}" = {
+          addSSL = true;
+        };
       };
     };
     #security.acme.acceptTerms = true;
