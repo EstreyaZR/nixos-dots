@@ -6,18 +6,20 @@
 }: let
   cfg = config.estreya.virt;
 in {
-  options.estreya.virt = {
-    enable = lib.mkEnableOption "enable virt, podman and stuff";
-    default = true;
-  };
+  options.estreya.virt.enable = lib.mkEnableOption "enable virt, podman and stuff";
   config = lib.mkIf cfg.enable {
-    services.podman.enable = true;
+    boot.binfmt.emulatedSystems = [
+      "aarch64-linux"
+      "riscv64-linux"
+    ];
 
     virtualisation = {
-      podman.enable = true;
+      libvirtd.enable = true;
       environment.systemPackages = with pkgs; [
         gnome-boxes
+        qemu
       ];
     };
+    users.users.maya = {ExtraGroups = ["libvirtd"];};
   };
 }

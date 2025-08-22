@@ -50,7 +50,12 @@
           home-manager.useUserPackages = true;
           home-manager.users.maya = ./users/maya-home.nix;
 
-          estreya.gaming.enable = true;
+          estreya = {
+            gaming.enable = true;
+            virt.enable = true;
+            podman.enable = true;
+            freshrss.enable = true;
+          };
         }
       ];
     };
