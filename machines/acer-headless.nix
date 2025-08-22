@@ -23,10 +23,6 @@
   environment.systemPackages = with pkgs; [
     kitty
     kdePackages.k3b
-    kdePackages.ark
-    kdePackages.kdenlive
-    krita
-    calibre
   ];
 
   hardware.nvidia = {
