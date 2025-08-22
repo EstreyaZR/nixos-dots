@@ -8,6 +8,6 @@
     ./programming.nix
     ./neovim-per-nvf.nix
 
-    ./networking.nix
+    #./networking.nix
   ];
 }

@@ -12,11 +12,11 @@ in {
       podman = {
         enable = true;
         dockerCompat = true;
-        enableNvidia = true;
       };
     };
     environment.systemPackages = with pkgs; [
       distrobox
     ];
+    hardware.nvidia-container-toolkit.enable = true;
   };
 }
