@@ -12,6 +12,9 @@ in {
       enable = true;
       language = "de";
       passwordFile = "/run/secrets/freshrssPW";
+      webserver = "nginx";
+      virtualHost = "freshrss";
+      baseUrl = "https://freshrss.estreya.com";
     };
   };
 }
