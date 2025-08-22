@@ -17,6 +17,5 @@ in {
     environment.systemPackages = with pkgs; [
       distrobox
     ];
-    hardware.nvidia-container-toolkit.enable = true;
   };
 }
