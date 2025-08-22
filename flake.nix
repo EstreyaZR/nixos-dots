@@ -54,7 +54,6 @@
             gaming.enable = true;
             virt.enable = true;
             podman.enable = true;
-            freshrss.enable = true;
           };
         }
       ];
