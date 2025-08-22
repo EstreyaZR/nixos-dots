@@ -21,6 +21,10 @@
       userName = "Maya Ella Mampf";
       userEmail = "zrezlon@gmail.com";
     };
+
+    gh = {
+      enable = true;
+    };
     librewolf = {
       enable = true;
       profiles = {
