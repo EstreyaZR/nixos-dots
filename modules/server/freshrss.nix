@@ -25,7 +25,7 @@ in {
           enableACME = true;
         };
       };
-      security.acme.acceptTerms = true;
     };
+    security.acme.acceptTerms = true;
   };
 }
