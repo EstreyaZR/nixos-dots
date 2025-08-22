@@ -15,7 +15,7 @@ in {
         language = "de";
         webserver = "nginx";
         virtualHost = address;
-        baseUrl = "https://${address}";
+        baseUrl = "http://${address}";
         #passwordFile = "/var/lib/freshrss/passwd";
         authType = "none";
         user = "freshrss";
