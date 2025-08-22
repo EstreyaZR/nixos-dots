@@ -18,7 +18,7 @@ in {
         baseUrl = "https://${address}";
         #passwordFile = "/var/lib/freshrss/passwd";
         authType = "none";
-        user = "maya";
+        user = "freshrss";
       };
       nginx = {
         enable = true;
