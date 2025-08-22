@@ -22,10 +22,9 @@ in {
       nginx = {
         enable = true;
         virtualHosts."${address}" = {
-          addSSL = true;
+          #  addSSL = true;
         };
       };
     };
-    #security.acme.acceptTerms = true;
   };
 }
