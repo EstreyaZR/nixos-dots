@@ -20,10 +20,8 @@ in {
       };
       nginx = {
         enable = true;
-        virtualHosts."${address}" = {
-          forceSSL = true;
-          enableACME = false;
-        };
+        #virtualHosts."${address}" = {
+        #};
       };
     };
     #security.acme.acceptTerms = true;
