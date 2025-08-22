@@ -22,10 +22,10 @@ in {
         enable = true;
         virtualHosts."${address}" = {
           forceSSL = true;
-          enableACME = true;
+          enableACME = false;
         };
       };
     };
-    security.acme.acceptTerms = true;
+    #security.acme.acceptTerms = true;
   };
 }
