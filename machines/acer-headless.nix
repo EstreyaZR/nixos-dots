@@ -30,12 +30,12 @@
   hardware.nvidia = {
     prime = {
       sync.enable = true;
-      nvidiaBusId = "PCI:1@0:0.0";
-      intelBusId = "PCI:0@0:2.0";
+      nvidiaBusId = "PCI:1@0:0:0";
+      intelBusId = "PCI:0@0:2:0";
     };
     powerManagement.enable = false;
     modesetting.enable = true;
-    open = false;
+    open = true;
   };
 
   hardware.nvidia-container-toolkit.enable = true;
