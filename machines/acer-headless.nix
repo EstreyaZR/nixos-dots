@@ -30,8 +30,8 @@
   hardware.nvidia = {
     prime = {
       sync.enable = true;
-      nvidiaBusId = "1.0.0";
-      intelBusId = "0.2.0";
+      nvidiaBusId = "PCI:1@0:0:0";
+      intelBusId = "PCI:0@0:2:0";
     };
     powerManagement.enable = false;
     modesetting.enable = true;
