@@ -35,6 +35,7 @@
     };
     powerManagement.enable = false;
     modesetting.enable = true;
+    open = false;
   };
 
   hardware.nvidia-container-toolkit.enable = true;
