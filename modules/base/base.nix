@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   lib,
   ...
 }: {
@@ -11,6 +12,7 @@
     };
     plymouth = {
       enable = true;
+      themePackage = pkgs.plymouth-blahaj-theme;
     };
   }; ## Common NIX options
 
@@ -44,19 +46,22 @@
   };
 
   # Never forget NVIM and GIT
-  environment.systemPackages = with pkgs; [
-    neovim
-    nano
-    wget
-    fastfetch
-    clang
-    bluetui
-
-    refind
-
-    steam-run
-    cachix
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      neovim
+      wget
+      steam-run
+      cachix
+    ])
+    ++ (
+      with pkgs-stable; [
+        nano
+        clang
+        refind
+        fastfetch
+        bluetui
+      ]
+    );
 
   programs = {
     nh.enable = lib.mkDefault true;
@@ -70,7 +75,10 @@
         ff = "fastfetch";
       };
     };
-    starship.enable = true;
+    starship = {
+      enable = true;
+      package = pkgs-stable.starship
+    };
     git = {
       enable = true;
     };
