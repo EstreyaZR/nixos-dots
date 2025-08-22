@@ -12,7 +12,8 @@
     };
     plymouth = {
       enable = true;
-      themePackage = pkgs.plymouth-blahaj-theme;
+      themePackages = pkgs.plymouth-blahaj-theme;
+      theme = "blahaj";
     };
   }; ## Common NIX options
 
