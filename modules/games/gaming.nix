@@ -12,7 +12,10 @@ in {
   };
   config = lib.mkIf cfg.enable {
     programs.steam.enable = true;
-    environment.systemPackages = with pkgs; [lutris];
+    environment.systemPackages = with pkgs; [
+      lutris
+      dolphin-emu
+    ];
     programs.java.enable = true;
   };
 }
