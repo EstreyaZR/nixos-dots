@@ -20,6 +20,6 @@ in {
       gnome-boxes
       qemu
     ];
-    users.users.maya = {ExtraGroups = ["libvirtd"];};
+    users.users.maya = {extraGroups = ["libvirtd"];};
   };
 }
