@@ -11,7 +11,7 @@ in {
   config = lib.mkIf cfg.enable {
     services = {
       freshrss = {
-        defaultUser = "freshrss";
+        defaultUser = "maya";
         enable = true;
         language = "de";
         webserver = "nginx";
