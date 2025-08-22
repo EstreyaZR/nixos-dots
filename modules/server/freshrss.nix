@@ -11,6 +11,7 @@ in {
     services.freshrss = {
       enable = true;
       language = "de";
+      passwordFile = "freshrssPW";
     };
   };
 }
