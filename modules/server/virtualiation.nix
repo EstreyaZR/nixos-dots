@@ -15,11 +15,11 @@ in {
 
     virtualisation = {
       libvirtd.enable = true;
-      environment.systemPackages = with pkgs; [
-        gnome-boxes
-        qemu
-      ];
     };
+    environment.systemPackages = with pkgs; [
+      gnome-boxes
+      qemu
+    ];
     users.users.maya = {ExtraGroups = ["libvirtd"];};
   };
 }
