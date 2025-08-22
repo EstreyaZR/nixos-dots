@@ -31,7 +31,12 @@
       nvidiaBusId = "1.0.0";
       intelBusId = "0.2.0";
     };
+    powerManagement.enable = false;
+    modesetting.enable = true;
+    enable = true;
   };
+
+  hardware.nvidia-container-toolkit.enable = true;
 
   services.ollama = {
     enable = true;
