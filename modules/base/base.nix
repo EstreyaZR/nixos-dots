@@ -77,7 +77,7 @@
     };
     starship = {
       enable = true;
-      package = pkgs-stable.starship
+      package = pkgs-stable.starship;
     };
     git = {
       enable = true;
