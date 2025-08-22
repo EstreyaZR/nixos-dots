@@ -7,20 +7,18 @@
   environment.systemPackages =
     (with pkgs; [
       #llvmPackages.bintools
-      #cargo
-      #rustc
       #clang
       #go
-
-      #jdk24
-
       #android-tools
       #android-studio
       #android-udev-rules
     ])
     ++ (with pkgs-stable; [
-      #c3c
-      #c3-lsp
+      c3c
+      c3-lsp
+      rustup
+      rustfmt
+      rust-analyzer
     ]);
 
   users.users.maya.extraGroups = ["kvm"];
