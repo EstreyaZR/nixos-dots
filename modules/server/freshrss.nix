@@ -11,7 +11,6 @@ in {
   config = lib.mkIf cfg.enable {
     services = {
       freshrss = {
-        defaultUser = "maya";
         enable = true;
         language = "de";
         webserver = "nginx";
@@ -19,6 +18,7 @@ in {
         baseUrl = "https://${address}";
         #passwordFile = "/var/lib/freshrss/passwd";
         authType = "none";
+        user = "maya";
       };
       nginx = {
         enable = true;
