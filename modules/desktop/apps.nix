@@ -15,7 +15,6 @@ in {
       hunspellDicts.en_US
       obsidian
       jamesdsp
-      papers
     ];
 
     services.pipewire.pulse.enable = true;

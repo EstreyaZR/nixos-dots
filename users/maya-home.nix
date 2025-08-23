@@ -6,10 +6,6 @@
   home.stateVersion = "25.05";
 
   programs = {
-    anki.enable = true;
-    anki.addons = with pkgs.ankiAddons; [
-      passfail2
-    ];
     direnv = {
       enable = true;
       nix-direnv.enable = true;
