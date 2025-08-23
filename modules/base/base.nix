@@ -44,23 +44,18 @@
   };
 
   # Never forget NVIM and GIT
-  environment.systemPackages =
-    (with pkgs; [
-      neovim
-      cachix
-      steam-run
-      wineWowPackages.waylandFull
-    ])
-    ++ (
-      with pkgs-stable; [
-        nano
-        clang
-        refind
-        fastfetch
-        bluetui
-        wget
-      ]
-    );
+  environment.systemPackages = with pkgs; [
+    neovim
+    cachix
+    steam-run
+    wineWowPackages.waylandFull
+    nano
+    clang
+    refind
+    fastfetch
+    bluetui
+    wget
+  ];
 
   programs = {
     nh.enable = lib.mkDefault true;
@@ -76,7 +71,7 @@
     };
     starship = {
       enable = true;
-      package = pkgs-stable.starship;
+      package = pkgs.starship;
     };
     git = {
       enable = true;
@@ -102,14 +97,14 @@
     bluetooth.enable = true;
     graphics = {
       enable = true;
-      extraPackages = with pkgs-stable; [
+      extraPackages = with pkgs; [
         libvdpau-va-gl
         intel-media-driver
         intel-vaapi-driver
         mesa
         nvidia-vaapi-driver
       ];
-      extraPackages32 = with pkgs-stable.pkgsi686Linux; [
+      extraPackages32 = with pkgs.pkgsi686Linux; [
         intel-vaapi-driver
         mesa
         intel-media-driver
