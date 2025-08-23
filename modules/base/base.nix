@@ -48,6 +48,8 @@
     (with pkgs; [
       neovim
       cachix
+      steam-run
+      wineWowPackages.waylandFull
     ])
     ++ (
       with pkgs-stable; [
@@ -56,8 +58,6 @@
         refind
         fastfetch
         bluetui
-        wineWowPackages.waylandFull
-        steam-run
         wget
       ]
     );
