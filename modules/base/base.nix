@@ -47,8 +47,6 @@
   environment.systemPackages =
     (with pkgs; [
       neovim
-      wget
-      steam-run
       cachix
     ])
     ++ (
@@ -58,6 +56,9 @@
         refind
         fastfetch
         bluetui
+        wineWowPackages.waylandFull
+        steam-run
+        wget
       ]
     );
 
@@ -101,14 +102,14 @@
     bluetooth.enable = true;
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [
+      extraPackages = with pkgs-stable; [
         libvdpau-va-gl
         intel-media-driver
         intel-vaapi-driver
         mesa
         nvidia-vaapi-driver
       ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [
+      extraPackages32 = with pkgs-stable.pkgsi686Linux; [
         intel-vaapi-driver
         mesa
         intel-media-driver

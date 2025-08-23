@@ -13,8 +13,8 @@
     # rose-pine-dawn
     # catppuccin-latte
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml"; #
-    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml"; #
+    polarity = "light";
 
     fonts = {
       monospace.package = pkgs.nerd-fonts._0xproto;
