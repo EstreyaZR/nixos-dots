@@ -25,10 +25,7 @@
   environment.systemPackages = with pkgs; [
     kitty
     kdePackages.k3b
-    retrospy
     retro-gtk
-    retroarch-bare
-    retroarch-assets
   ];
 
   hardware.nvidia = {
